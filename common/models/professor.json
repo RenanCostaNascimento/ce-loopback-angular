@@ -1,0 +1,37 @@
+{
+  "name": "professor",
+  "plural": "professores",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "cpf": {
+      "type": "string",
+      "required": true
+    },
+    "genero": {
+      "type": "string",
+      "required": true
+    },
+    "nascimento": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "enderecoProfessor": {
+      "type": "hasOne",
+      "model": "endereco",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}
