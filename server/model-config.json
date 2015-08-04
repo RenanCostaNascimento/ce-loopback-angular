@@ -36,10 +36,6 @@
     "dataSource": "db",
     "public": true
   },
-  "endereco": {
-    "dataSource": "db",
-    "public": true
-  },
   "disciplina": {
     "dataSource": "db",
     "public": true

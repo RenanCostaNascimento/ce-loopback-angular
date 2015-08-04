@@ -1,28 +1,79 @@
 <ul class="collection with-header">
   <li class="collection-header"><h4>Professores Cadastrados</h4></li>
-  <li class="collection-item" ng-repeat="disciplina in disciplinas">
-    <div>{{disciplina.nome}}, {{disciplina.vagas}} vagas - {{disciplina.periodo}}° período
-      <a href="" ng-click="carregarEdicao(disciplina)" class="secondary-content"><i class="material-icons">mode_edit</i></a>
+  <li class="collection-item" ng-repeat="professor in professores">
+    <div>{{professor.nome}}
+      <a href="" ng-click="carregarEdicao(professor)" class="secondary-content"><i class="material-icons">mode_edit</i></a>
     </div>
   </li>
 </ul>
 
-<form class="col s12">
+<form name="form" novalidate class="col s12">
   <div class="row">
-    <div class="input-field col s6">
-      <input id="nome" type="text" ng-model="disciplina.nome" placeholder="Nome da Disciplina">
+    <div class="input-field col s4">
+      <input name="nome" type="text" ng-model="professor.nome" placeholder="Nome do Professor" required>
       <label class="active" for="nome">Nome</label>
+      <span style="color:red" ng-show="form.nome.$touched">
+        <span ng-show="form.nome.$error.required">Favor preencher nome</span>
+      </span>
     </div>
-    <div class="input-field col s3">
-      <input id="vagas" type="number" ng-model="disciplina.vagas" placeholder="Quantidade de vagas disponíveis">
-      <label class="active" for="vagas">Vagas</label>
+    <div class="input-field col s4">
+      <input name="cpf" type="text" ng-model="professor.cpf" placeholder="CPF do Professor" required>
+      <label class="active" for="cpf">CPF</label>
+      <span style="color:red" ng-show="form.cpf.$touched">
+        <span ng-show="form.cpf.$error.required">Favor preencher CPF</span>
+      </span>
     </div>
-    <div class="input-field col s3">
-      <input id="periodo" type="number" ng-model="disciplina.periodo" placeholder="Período em que a disciplina será ofertada">
-      <label class="active" for="periodo">Período</label>
+    <div class="input-field col s2">
+      <input name="genero" id="masculino" type="radio" ng-model="professor.genero" value="Masculino" required>
+      <label class="active" for="masculino">Masculino</label>
+      <input name="genero" id="feminino" type="radio" ng-model="professor.genero" value="Feminino" required>
+      <label class="active" for="feminino">Feminino</label>
+      <span style="color:red" ng-show="form.genero.$touched">
+        <span ng-show="form.genero.$error.required">Favor escolher gênero</span>
+      </span>
+    </div>
+    <div class="input-field col s2">
+      <input name="nascimento" type="date" ng-model="professor.nascimento"required>
+      <label class="active" for="nascimento">Nascimento</label>
+      <span style="color:red" ng-show="form.nascimento.$touched">
+        <span ng-show="form.nascimento.$error.required">Favor preencher nascimento</span>
+      </span>
     </div>
   </div>
-  <a ng-click="salvarDisciplina()" class="waves-effect waves-light btn orange">Criar Nova</a>
-  <a ng-click="editarDisciplina()" class="waves-effect waves-light btn orange">Salvar Alterações</a>
+  <div class="row">
+    <div class="input-field col s4">
+      <input name="cep" type="text" ng-model="professor.cep" placeholder="CEP do Professor" ng-blur="preencherEndereco(professor.cep)" required>
+      <label class="active" for="cep">CEP</label>
+      <span style="color:red" ng-show="form.cep.$touched">
+        <span ng-show="form.cep.$error.required">Favor preencher CEP</span>
+      </span>
+    </div>
+    <div class="input-field col s6">
+      <input name="rua" type="text" ng-model="professor.rua" placeholder="Rua do Professor" disabled>
+      <label class="active" for="rua">Rua</label>
+    </div>
+    <div class="input-field col s2">
+      <input name="numero" type="number" ng-model="professor.numero" placeholder="Número da Rua" disabled>
+      <label class="active" for="rua">Número</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s4">
+      <input name="bairro" type="text" ng-model="professor.bairro" placeholder="Bairro do Professor" disabled>
+      <label class="active" for="bairro">Bairro</label>
+    </div>
+    <div class="input-field col s4">
+      <input name="cidade" type="text" ng-model="professor.cidade" placeholder="Cidade do Professor" disabled>
+      <label class="active" for="cidade">Cidade</label>
+    </div>
+    <div class="input-field col s4">
+      <input name="estado" type="text" ng-model="professor.estado" placeholder="Estado do Professor" disabled>
+      <label class="active" for="estado">Estado</label>
+    </div>
+  </div>
+  <input type="submit" ng-disabled="form.nome.$invalid || form.cpf.$invalid || form.genero.$invalid || form.nascimento.$invalid || form.cep.$invalid"
+  ng-click="salvarProfessor()" class="waves-effect waves-light btn orange" value="Criar Nova">
+  <input type="submit" ng-disabled="form.nome.$invalid || form.cpf.$invalid || form.genero.$invalid || form.nascimento.$invalid || form.cep.$invalid"
+  ng-click="editarProfessor()" class="waves-effect waves-light btn orange" value="Salvar Alterações">
   <a ng-click="limpar()" class="waves-effect waves-light btn orange">Limpar</a>
 </form>

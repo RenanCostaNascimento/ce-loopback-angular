@@ -22,16 +22,34 @@
     "nascimento": {
       "type": "date",
       "required": true
+    },
+    "cep": {
+      "type": "string",
+      "required": true
+    },
+    "rua": {
+      "type": "string",
+      "required": true
+    },
+    "numero": {
+      "type": "number",
+      "required": true
+    },
+    "bairro": {
+      "type": "string",
+      "required": true
+    },
+    "cidade": {
+      "type": "string",
+      "required": true
+    },
+    "estado": {
+      "type": "string",
+      "required": true
     }
   },
   "validations": [],
-  "relations": {
-    "enderecoProfessor": {
-      "type": "hasOne",
-      "model": "endereco",
-      "foreignKey": ""
-    }
-  },
+  "relations": {},
   "acls": [],
   "methods": []
 }
