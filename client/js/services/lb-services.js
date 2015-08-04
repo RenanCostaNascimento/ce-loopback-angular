@@ -168,7 +168,7 @@ module.factory(
          *
          *  - `id` – `{*}` - User id
          *
-         *  - `filter` – `{object=}` - 
+         *  - `filter` – `{object=}` -
          *
          * @param {function(Array.<Object>,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -285,7 +285,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "prototype$__count__accessTokens": {
           url: urlBase + "/Users/:id/accessTokens/count",
@@ -432,7 +432,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `exists` – `{boolean=}` - 
+         *  - `exists` – `{boolean=}` -
          */
         "exists": {
           url: urlBase + "/Users/:id/exists",
@@ -630,7 +630,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "count": {
           url: urlBase + "/Users/count",
@@ -690,7 +690,7 @@ module.factory(
          *
          * @param {Object} postData Request data.
          *
-         *  - `options` – `{object=}` - 
+         *  - `options` – `{object=}` -
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -704,7 +704,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `changes` – `{ReadableStream=}` - 
+         *  - `changes` – `{ReadableStream=}` -
          */
         "createChangeStream": {
           url: urlBase + "/Users/change-stream",
@@ -745,9 +745,9 @@ module.factory(
          *
          * The response body contains properties of the AccessToken created on login.
          * Depending on the value of `include` parameter, the body may contain additional properties:
-         * 
+         *
          *   - `user` - `{User}` - Data of the currently logged in user. (`include=user`)
-         * 
+         *
          *
          */
         "login": {
@@ -820,11 +820,11 @@ module.factory(
          *
          * @param {Object=} parameters Request parameters.
          *
-         *  - `uid` – `{string}` - 
+         *  - `uid` – `{string}` -
          *
-         *  - `token` – `{string}` - 
+         *  - `token` – `{string}` -
          *
-         *  - `redirect` – `{string=}` - 
+         *  - `redirect` – `{string=}` -
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -1122,30 +1122,6 @@ module.factory(
       { 'id': '@id' },
       {
 
-        // INTERNAL. Use Professor.enderecoProfessor() instead.
-        "prototype$__get__enderecoProfessor": {
-          url: urlBase + "/professores/:id/enderecoProfessor",
-          method: "GET"
-        },
-
-        // INTERNAL. Use Professor.enderecoProfessor.create() instead.
-        "prototype$__create__enderecoProfessor": {
-          url: urlBase + "/professores/:id/enderecoProfessor",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Professor.enderecoProfessor.update() instead.
-        "prototype$__update__enderecoProfessor": {
-          url: urlBase + "/professores/:id/enderecoProfessor",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use Professor.enderecoProfessor.destroy() instead.
-        "prototype$__destroy__enderecoProfessor": {
-          url: urlBase + "/professores/:id/enderecoProfessor",
-          method: "DELETE"
-        },
-
         /**
          * @ngdoc method
          * @name lbServices.Professor#create
@@ -1286,7 +1262,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `exists` – `{boolean=}` - 
+         *  - `exists` – `{boolean=}` -
          */
         "exists": {
           url: urlBase + "/professores/:id/exists",
@@ -1484,7 +1460,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "count": {
           url: urlBase + "/professores/count",
@@ -1544,7 +1520,7 @@ module.factory(
          *
          * @param {Object} postData Request data.
          *
-         *  - `options` – `{object=}` - 
+         *  - `options` – `{object=}` -
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -1558,42 +1534,17 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `changes` – `{ReadableStream=}` - 
+         *  - `changes` – `{ReadableStream=}` -
          */
         "createChangeStream": {
           url: urlBase + "/professores/change-stream",
           method: "POST"
         },
 
-        // INTERNAL. Use Disciplina.professorDisciplina() instead.
-        "::get::disciplina::professorDisciplina": {
-          url: urlBase + "/disciplinas/:id/professorDisciplina",
+        // INTERNAL. Use Disciplina.professor() instead.
+        "::get::disciplina::professor": {
+          url: urlBase + "/disciplinas/:id/professor",
           method: "GET"
-        },
-
-        // INTERNAL. Use Disciplina.professorDisciplina.create() instead.
-        "::create::disciplina::professorDisciplina": {
-          url: urlBase + "/disciplinas/:id/professorDisciplina",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Disciplina.professorDisciplina.createMany() instead.
-        "::createMany::disciplina::professorDisciplina": {
-          isArray: true,
-          url: urlBase + "/disciplinas/:id/professorDisciplina",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Disciplina.professorDisciplina.update() instead.
-        "::update::disciplina::professorDisciplina": {
-          url: urlBase + "/disciplinas/:id/professorDisciplina",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use Disciplina.professorDisciplina.destroy() instead.
-        "::destroy::disciplina::professorDisciplina": {
-          url: urlBase + "/disciplinas/:id/professorDisciplina",
-          method: "DELETE"
         },
       }
     );
@@ -1731,815 +1682,6 @@ module.factory(
     */
     R.modelName = "Professor";
 
-    /**
-     * @ngdoc object
-     * @name lbServices.Professor.enderecoProfessor
-     * @header lbServices.Professor.enderecoProfessor
-     * @object
-     * @description
-     *
-     * The object `Professor.enderecoProfessor` groups methods
-     * manipulating `Endereco` instances related to `Professor`.
-     *
-     * Call {@link lbServices.Professor#enderecoProfessor Professor.enderecoProfessor()}
-     * to query all related instances.
-     */
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Professor#enderecoProfessor
-         * @methodOf lbServices.Professor
-         *
-         * @description
-         *
-         * Fetches hasOne relation enderecoProfessor.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         *  - `refresh` – `{boolean=}` - 
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Endereco` object.)
-         * </em>
-         */
-        R.enderecoProfessor = function() {
-          var TargetResource = $injector.get("Endereco");
-          var action = TargetResource["::get::professor::enderecoProfessor"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Professor.enderecoProfessor#create
-         * @methodOf lbServices.Professor.enderecoProfessor
-         *
-         * @description
-         *
-         * Creates a new instance in enderecoProfessor of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Endereco` object.)
-         * </em>
-         */
-        R.enderecoProfessor.create = function() {
-          var TargetResource = $injector.get("Endereco");
-          var action = TargetResource["::create::professor::enderecoProfessor"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Professor.enderecoProfessor#createMany
-         * @methodOf lbServices.Professor.enderecoProfessor
-         *
-         * @description
-         *
-         * Creates a new instance in enderecoProfessor of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Endereco` object.)
-         * </em>
-         */
-        R.enderecoProfessor.createMany = function() {
-          var TargetResource = $injector.get("Endereco");
-          var action = TargetResource["::createMany::professor::enderecoProfessor"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Professor.enderecoProfessor#destroy
-         * @methodOf lbServices.Professor.enderecoProfessor
-         *
-         * @description
-         *
-         * Deletes enderecoProfessor of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R.enderecoProfessor.destroy = function() {
-          var TargetResource = $injector.get("Endereco");
-          var action = TargetResource["::destroy::professor::enderecoProfessor"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Professor.enderecoProfessor#update
-         * @methodOf lbServices.Professor.enderecoProfessor
-         *
-         * @description
-         *
-         * Update enderecoProfessor of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Endereco` object.)
-         * </em>
-         */
-        R.enderecoProfessor.update = function() {
-          var TargetResource = $injector.get("Endereco");
-          var action = TargetResource["::update::professor::enderecoProfessor"];
-          return action.apply(R, arguments);
-        };
-
-    return R;
-  }]);
-
-/**
- * @ngdoc object
- * @name lbServices.Endereco
- * @header lbServices.Endereco
- * @object
- *
- * @description
- *
- * A $resource object for interacting with the `Endereco` model.
- *
- * ## Example
- *
- * See
- * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
- * for an example of using this object.
- *
- */
-module.factory(
-  "Endereco",
-  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
-    var R = Resource(
-      urlBase + "/enderecos/:id",
-      { 'id': '@id' },
-      {
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#create
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Create a new instance of the model and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Endereco` object.)
-         * </em>
-         */
-        "create": {
-          url: urlBase + "/enderecos",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#createMany
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Create a new instance of the model and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Endereco` object.)
-         * </em>
-         */
-        "createMany": {
-          isArray: true,
-          url: urlBase + "/enderecos",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#upsert
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Update an existing model instance or insert a new one into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Endereco` object.)
-         * </em>
-         */
-        "upsert": {
-          url: urlBase + "/enderecos",
-          method: "PUT"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#exists
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Check whether a model instance exists in the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `exists` – `{boolean=}` - 
-         */
-        "exists": {
-          url: urlBase + "/enderecos/:id/exists",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#findById
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Find a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         *  - `filter` – `{object=}` - Filter defining fields and include
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Endereco` object.)
-         * </em>
-         */
-        "findById": {
-          url: urlBase + "/enderecos/:id",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#find
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Find all instances of the model matched by filter from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Endereco` object.)
-         * </em>
-         */
-        "find": {
-          isArray: true,
-          url: urlBase + "/enderecos",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#findOne
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Find first instance of the model matched by filter from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Endereco` object.)
-         * </em>
-         */
-        "findOne": {
-          url: urlBase + "/enderecos/findOne",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#updateAll
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Update instances of the model matched by where from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        "updateAll": {
-          url: urlBase + "/enderecos/update",
-          method: "POST"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#deleteById
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Delete a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        "deleteById": {
-          url: urlBase + "/enderecos/:id",
-          method: "DELETE"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#count
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Count instances of the model matched by where from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `count` – `{number=}` - 
-         */
-        "count": {
-          url: urlBase + "/enderecos/count",
-          method: "GET"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#prototype$updateAttributes
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Update attributes for a model instance and persist it into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Endereco` object.)
-         * </em>
-         */
-        "prototype$updateAttributes": {
-          url: urlBase + "/enderecos/:id",
-          method: "PUT"
-        },
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#createChangeStream
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Create a change stream.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         *  - `options` – `{object=}` - 
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * Data properties:
-         *
-         *  - `changes` – `{ReadableStream=}` - 
-         */
-        "createChangeStream": {
-          url: urlBase + "/enderecos/change-stream",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Professor.enderecoProfessor() instead.
-        "::get::professor::enderecoProfessor": {
-          url: urlBase + "/professores/:id/enderecoProfessor",
-          method: "GET"
-        },
-
-        // INTERNAL. Use Professor.enderecoProfessor.create() instead.
-        "::create::professor::enderecoProfessor": {
-          url: urlBase + "/professores/:id/enderecoProfessor",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Professor.enderecoProfessor.createMany() instead.
-        "::createMany::professor::enderecoProfessor": {
-          isArray: true,
-          url: urlBase + "/professores/:id/enderecoProfessor",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Professor.enderecoProfessor.update() instead.
-        "::update::professor::enderecoProfessor": {
-          url: urlBase + "/professores/:id/enderecoProfessor",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use Professor.enderecoProfessor.destroy() instead.
-        "::destroy::professor::enderecoProfessor": {
-          url: urlBase + "/professores/:id/enderecoProfessor",
-          method: "DELETE"
-        },
-      }
-    );
-
-
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#updateOrCreate
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Update an existing model instance or insert a new one into the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *   This method does not accept any parameters.
-         *   Supply an empty object or omit this argument altogether.
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Endereco` object.)
-         * </em>
-         */
-        R["updateOrCreate"] = R["upsert"];
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#update
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Update instances of the model matched by where from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `where` – `{object=}` - Criteria to match model instances
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R["update"] = R["updateAll"];
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#destroyById
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Delete a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R["destroyById"] = R["deleteById"];
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Endereco#removeById
-         * @methodOf lbServices.Endereco
-         *
-         * @description
-         *
-         * Delete a model instance by id from the data source.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - Model id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R["removeById"] = R["deleteById"];
-
-
-    /**
-    * @ngdoc property
-    * @name lbServices.Endereco#modelName
-    * @propertyOf lbServices.Endereco
-    * @description
-    * The name of the model represented by this $resource,
-    * i.e. `Endereco`.
-    */
-    R.modelName = "Endereco";
-
 
     return R;
   }]);
@@ -2569,28 +1711,10 @@ module.factory(
       { 'id': '@id' },
       {
 
-        // INTERNAL. Use Disciplina.professorDisciplina() instead.
-        "prototype$__get__professorDisciplina": {
-          url: urlBase + "/disciplinas/:id/professorDisciplina",
+        // INTERNAL. Use Disciplina.professor() instead.
+        "prototype$__get__professor": {
+          url: urlBase + "/disciplinas/:id/professor",
           method: "GET"
-        },
-
-        // INTERNAL. Use Disciplina.professorDisciplina.create() instead.
-        "prototype$__create__professorDisciplina": {
-          url: urlBase + "/disciplinas/:id/professorDisciplina",
-          method: "POST"
-        },
-
-        // INTERNAL. Use Disciplina.professorDisciplina.update() instead.
-        "prototype$__update__professorDisciplina": {
-          url: urlBase + "/disciplinas/:id/professorDisciplina",
-          method: "PUT"
-        },
-
-        // INTERNAL. Use Disciplina.professorDisciplina.destroy() instead.
-        "prototype$__destroy__professorDisciplina": {
-          url: urlBase + "/disciplinas/:id/professorDisciplina",
-          method: "DELETE"
         },
 
         /**
@@ -2733,7 +1857,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `exists` – `{boolean=}` - 
+         *  - `exists` – `{boolean=}` -
          */
         "exists": {
           url: urlBase + "/disciplinas/:id/exists",
@@ -2931,7 +2055,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `count` – `{number=}` - 
+         *  - `count` – `{number=}` -
          */
         "count": {
           url: urlBase + "/disciplinas/count",
@@ -2991,7 +2115,7 @@ module.factory(
          *
          * @param {Object} postData Request data.
          *
-         *  - `options` – `{object=}` - 
+         *  - `options` – `{object=}` -
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -3005,7 +2129,7 @@ module.factory(
          *
          * Data properties:
          *
-         *  - `changes` – `{ReadableStream=}` - 
+         *  - `changes` – `{ReadableStream=}` -
          */
         "createChangeStream": {
           url: urlBase + "/disciplinas/change-stream",
@@ -3147,35 +2271,21 @@ module.factory(
     */
     R.modelName = "Disciplina";
 
-    /**
-     * @ngdoc object
-     * @name lbServices.Disciplina.professorDisciplina
-     * @header lbServices.Disciplina.professorDisciplina
-     * @object
-     * @description
-     *
-     * The object `Disciplina.professorDisciplina` groups methods
-     * manipulating `Professor` instances related to `Disciplina`.
-     *
-     * Call {@link lbServices.Disciplina#professorDisciplina Disciplina.professorDisciplina()}
-     * to query all related instances.
-     */
-
 
         /**
          * @ngdoc method
-         * @name lbServices.Disciplina#professorDisciplina
+         * @name lbServices.Disciplina#professor
          * @methodOf lbServices.Disciplina
          *
          * @description
          *
-         * Fetches hasOne relation professorDisciplina.
+         * Fetches belongsTo relation professor.
          *
          * @param {Object=} parameters Request parameters.
          *
          *  - `id` – `{*}` - PersistedModel id
          *
-         *  - `refresh` – `{boolean=}` - 
+         *  - `refresh` – `{boolean=}` -
          *
          * @param {function(Object,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
@@ -3192,154 +2302,9 @@ module.factory(
          * This usually means the response is a `Professor` object.)
          * </em>
          */
-        R.professorDisciplina = function() {
+        R.professor = function() {
           var TargetResource = $injector.get("Professor");
-          var action = TargetResource["::get::disciplina::professorDisciplina"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Disciplina.professorDisciplina#create
-         * @methodOf lbServices.Disciplina.professorDisciplina
-         *
-         * @description
-         *
-         * Creates a new instance in professorDisciplina of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Professor` object.)
-         * </em>
-         */
-        R.professorDisciplina.create = function() {
-          var TargetResource = $injector.get("Professor");
-          var action = TargetResource["::create::disciplina::professorDisciplina"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Disciplina.professorDisciplina#createMany
-         * @methodOf lbServices.Disciplina.professorDisciplina
-         *
-         * @description
-         *
-         * Creates a new instance in professorDisciplina of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Array.<Object>,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Array.<Object>} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Professor` object.)
-         * </em>
-         */
-        R.professorDisciplina.createMany = function() {
-          var TargetResource = $injector.get("Professor");
-          var action = TargetResource["::createMany::disciplina::professorDisciplina"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Disciplina.professorDisciplina#destroy
-         * @methodOf lbServices.Disciplina.professorDisciplina
-         *
-         * @description
-         *
-         * Deletes professorDisciplina of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * This method returns no data.
-         */
-        R.professorDisciplina.destroy = function() {
-          var TargetResource = $injector.get("Professor");
-          var action = TargetResource["::destroy::disciplina::professorDisciplina"];
-          return action.apply(R, arguments);
-        };
-
-        /**
-         * @ngdoc method
-         * @name lbServices.Disciplina.professorDisciplina#update
-         * @methodOf lbServices.Disciplina.professorDisciplina
-         *
-         * @description
-         *
-         * Update professorDisciplina of this model.
-         *
-         * @param {Object=} parameters Request parameters.
-         *
-         *  - `id` – `{*}` - PersistedModel id
-         *
-         * @param {Object} postData Request data.
-         *
-         * This method expects a subset of model properties as request parameters.
-         *
-         * @param {function(Object,Object)=} successCb
-         *   Success callback with two arguments: `value`, `responseHeaders`.
-         *
-         * @param {function(Object)=} errorCb Error callback with one argument:
-         *   `httpResponse`.
-         *
-         * @returns {Object} An empty reference that will be
-         *   populated with the actual data once the response is returned
-         *   from the server.
-         *
-         * <em>
-         * (The remote method definition does not provide any description.
-         * This usually means the response is a `Professor` object.)
-         * </em>
-         */
-        R.professorDisciplina.update = function() {
-          var TargetResource = $injector.get("Professor");
-          var action = TargetResource["::update::disciplina::professorDisciplina"];
+          var action = TargetResource["::get::disciplina::professor"];
           return action.apply(R, arguments);
         };
 

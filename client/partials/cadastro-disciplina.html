@@ -17,22 +17,30 @@
       </span>
     </p>
   </div>
-  <div class="input-field col s3">
-    <input name="vagas" type="number" min="5" max="40" ng-model="disciplina.vagas" placeholder="Quantidade de vagas disponíveis" required>
+  <div class="input-field col s2">
+    <input name="vagas" type="number" min="5" max="40" ng-model="disciplina.vagas" placeholder="Quantidade de vagas" required>
     <label class="active" for="vagas">Vagas</label>
     <span style="color:red" ng-show="form.vagas.$touched">
       <span ng-show="form.vagas.$error.required">Favor preencher vagas</span>
       <span ng-show="form.vagas.$error.min || form.vagas.$error.max">Valor Mínimo: 5 - Valor Máximo: 40</span>
     </span>
   </div>
-  <div class="input-field col s3">
-    <input name="periodo" type="number" min="1" max="12" ng-model="disciplina.periodo" placeholder="Período em que a disciplina é ofertada" required>
+  <div class="input-field col s2">
+    <input name="periodo" type="number" min="1" max="12" ng-model="disciplina.periodo" placeholder="Período ofertado" required>
     <label class="active" for="periodo">Período</label>
     <span style="color:red" ng-show="form.periodo.$touched">
       <span ng-show="form.periodo.$error.required">Favor preencher vagas</span>
       <span ng-show="form.periodo.$error.min || form.periodo.$error.max">Valor Mínimo: 1 - Valor Máximo: 12</span>
     </span>
   </div>
+  <div class="input-field col s2">
+    <select class="form-control" ng-model="selected.available" ng-options="{{ selectOptions }}" multiple size="5"></select>
+  <label class="active" for="periodo">Período</label>
+  <span style="color:red" ng-show="form.periodo.$touched">
+    <span ng-show="form.periodo.$error.required">Favor preencher vagas</span>
+    <span ng-show="form.periodo.$error.min || form.periodo.$error.max">Valor Mínimo: 1 - Valor Máximo: 12</span>
+  </span>
+</div>
 </div>
 <input type="submit" ng-disabled="form.nome.$invalid || form.vagas.$invalid || form.periodo.$invalid"
 ng-click="salvarDisciplina()" class="waves-effect waves-light btn orange" value="Criar Nova">

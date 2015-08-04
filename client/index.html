@@ -7,49 +7,168 @@
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet"/>
+
 </head>
 <body ng-app="App">
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Gestão de Professores e Disciplinas</a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="#/professores">Professores</a></li>
-        <li><a href="#/disciplinas">Disciplinas</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="#/professores">Professores</a></li>
-        <li><a href="#/disciplinas">Disciplinas</a></li>
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
   <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">Trabalho de Comércio Eletrônico</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">Desenvolvido por Renan Costa Nascimento</h5>
+
+    <!-- PROFESSORES -->
+    <div ng-controller="Controlador">
+      <div class="container">
+        <ul class="collection with-header">
+          <li class="collection-header"><h4>Professores Cadastrados</h4></li>
+          <li class="collection-item" ng-repeat="professor in professores">
+            <div>{{professor.nome}}
+              <a href="" ng-click="carregarEdicao(professor)" class="secondary-content"><i class="material-icons">mode_edit</i></a>
+            </div>
+          </li>
+        </ul>
+        <form name="form1" novalidate class="col s12">
+          <div class="row">
+            <div class="input-field col s4">
+              <input name="nome" type="text" ng-model="professor.nome" placeholder="Nome do Professor" required>
+              <label class="active" for="nome">Nome</label>
+              <span style="color:red" ng-show="form.nome.$touched">
+                <span ng-show="form1.nome.$error.required">Favor preencher nome</span>
+              </span>
+            </div>
+            <div class="input-field col s4">
+              <input name="cpf" type="text" ng-model="professor.cpf" placeholder="CPF do Professor" required>
+              <label class="active" for="cpf">CPF</label>
+              <span style="color:red" ng-show="form.cpf.$touched">
+                <span ng-show="form1.cpf.$error.required">Favor preencher CPF</span>
+              </span>
+            </div>
+            <div class="input-field col s2">
+              <input name="genero" id="masculino" type="radio" ng-model="professor.genero" value="Masculino" required>
+              <label class="active" for="masculino">Masculino</label>
+              <input name="genero" id="feminino" type="radio" ng-model="professor.genero" value="Feminino" required>
+              <label class="active" for="feminino">Feminino</label>
+              <span style="color:red" ng-show="form.genero.$touched">
+                <span ng-show="form1.genero.$error.required">Favor escolher gênero</span>
+              </span>
+            </div>
+            <div class="input-field col s2">
+              <input name="nascimento" type="date" ng-model="professor.nascimento"required>
+              <label class="active" for="nascimento">Nascimento</label>
+              <span style="color:red" ng-show="form.nascimento.$touched">
+                <span ng-show="form1.nascimento.$error.required">Favor preencher nascimento</span>
+              </span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s4">
+              <input name="cep" type="text" ng-model="professor.cep" placeholder="CEP do Professor" ng-blur="preencherEndereco(professor.cep)" required>
+              <label class="active" for="cep">CEP</label>
+              <span style="color:red" ng-show="form.cep.$touched">
+                <span ng-show="form1.cep.$error.required">Favor preencher CEP</span>
+              </span>
+            </div>
+            <div class="input-field col s6">
+              <input name="rua" type="text" ng-model="professor.rua" placeholder="Rua do Professor" disabled>
+              <label class="active" for="rua">Rua</label>
+            </div>
+            <div class="input-field col s2">
+              <input name="numero" type="number" ng-model="professor.numero" placeholder="Número da Rua" disabled>
+              <label class="active" for="rua">Número</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s4">
+              <input name="bairro" type="text" ng-model="professor.bairro" placeholder="Bairro do Professor" disabled>
+              <label class="active" for="bairro">Bairro</label>
+            </div>
+            <div class="input-field col s4">
+              <input name="cidade" type="text" ng-model="professor.cidade" placeholder="Cidade do Professor" disabled>
+              <label class="active" for="cidade">Cidade</label>
+            </div>
+            <div class="input-field col s4">
+              <input name="estado" type="text" ng-model="professor.estado" placeholder="Estado do Professor" disabled>
+              <label class="active" for="estado">Estado</label>
+            </div>
+          </div>
+          <input type="button" ng-disabled="form1.nome.$invalid || form1.cpf.$invalid || form1.genero.$invalid || form1.nascimento.$invalid || form1.cep.$invalid"
+          ng-click="salvarProfessor()" value="Criar Nova">
+          <input type="submit" ng-disabled="form1.nome.$invalid || form1.cpf.$invalid || form1.genero.$invalid || form1.nascimento.$invalid || form1.cep.$invalid"
+          ng-click="editarProfessor()" value="Salvar Alterações">
+          <input type="submit" ng-click="limpar()" value="Limpar">
+        </form>
       </div>
-      <br><br>
+    </br></br>
 
-      <div ng-view></div>
+    <!-- DISCIPLINAS -->
+    <div class="container">
+      <ul class="collection with-header">
+        <li class="collection-header"><h4>Disciplinas Cadastradas</h4></li>
+        <li class="collection-item" ng-repeat="disciplina in disciplinas">
+          <div>{{disciplina.nome}}, {{disciplina.vagas}} vagas - {{disciplina.periodo}}° período (Id do professor:{{disciplina.professorId}})
+            <a href="" ng-click="carregarEdicao(disciplina)" class="secondary-content"><i class="material-icons">mode_edit</i></a>
+          </div>
+        </li>
+      </ul>
 
-    </div>
+      <form name="form" novalidate class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input name="nome" type="text" ng-model="disciplina.nome" placeholder="Nome da Disciplina" required>
+            <label class="active" for="nome">Nome</label>
+            <span style="color:red" ng-show="form.nome.$touched">
+              <span ng-show="form.nome.$error.required">Favor preencher nome</span>
+            </span>
+          </p>
+        </div>
+        <div class="input-field col s2">
+          <input name="vagas" type="number" min="5" max="40" ng-model="disciplina.vagas" placeholder="Quantidade de vagas" required>
+          <label class="active" for="vagas">Vagas</label>
+          <span style="color:red" ng-show="form.vagas.$touched">
+            <span ng-show="form.vagas.$error.required">Favor preencher vagas</span>
+            <span ng-show="form.vagas.$error.min || form.vagas.$error.max">Valor Mínimo: 5 - Valor Máximo: 40</span>
+          </span>
+        </div>
+        <div class="input-field col s2">
+          <input name="periodo" type="number" min="1" max="12" ng-model="disciplina.periodo" placeholder="Período ofertado" required>
+          <label class="active" for="periodo">Período</label>
+          <span style="color:red" ng-show="form.periodo.$touched">
+            <span ng-show="form.periodo.$error.required">Favor preencher vagas</span>
+            <span ng-show="form.periodo.$error.min || form.periodo.$error.max">Valor Mínimo: 1 - Valor Máximo: 12</span>
+          </span>
+        </div>
+        <div class="input-field col s2">
+          <select class="browser-default" name ="professor" ng-model="professorSelecionado" ng-options="professor.nome for professor in professores" required></select>
+          <label class="active" for="periodo">Professor</label>
+          <span style="color:red" ng-show="form.periodo.$touched">
+            <span ng-show="form.professor.$error.required">Favor escolher professor</span>
+          </span>
+        </div>
+      </div>
+      <input type="submit" ng-disabled="form.nome.$invalid || form.vagas.$invalid || form.periodo.$invalid || form.professor.$invalid"
+      ng-click="salvarDisciplina()" value="Criar Nova">
+      <input type="submit" ng-disabled="form.nome.$invalid || form.vagas.$invalid || form.periodo.$invalid || form.professor.$invalid"
+      ng-click="editarDisciplina()" value="Salvar Alterações">
+      <input type="submit" ng-click="limpar()" value="Limpar">
+    </form>
   </div>
-
-  <!--  Scripts-->
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-resource.js"></script>
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/controllers/controllers.js"></script>
-  <script src="js/services/lb-services.js"></script>
-  <script src="js/services/lb-services.js"></script>
-
-  </body>
+</div>
+<!--  Scripts-->
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-route.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular-resource.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/controllers.js"></script>
+<script src="js/services/lb-services.js"></script>
+<script>
+$(document).ready(function() {
+  $('select').material_select();
+});
+</script>
+</body>
 </html>

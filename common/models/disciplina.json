@@ -22,8 +22,8 @@
   },
   "validations": [],
   "relations": {
-    "professorDisciplina": {
-      "type": "hasOne",
+    "professor": {
+      "type": "belongsTo",
       "model": "professor",
       "foreignKey": ""
     }
