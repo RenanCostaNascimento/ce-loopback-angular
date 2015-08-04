@@ -7,6 +7,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/cadastro-disciplina.html',
         controller: 'ControladorDisciplinas'
       }).
+      when('/professores', {
+        templateUrl: 'partials/cadastro-professor.html',
+        controller: 'ControladorProfessor'
+      }).
       otherwise({
         redirectTo: '/'
       });

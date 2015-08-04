@@ -1,7 +1,6 @@
 'use strict';
 
 app.controller('ControladorDisciplinas', ['$scope', 'Disciplina', function($scope, Disciplina){
-
   $scope.disciplinas = Disciplina.find();
   $scope.disciplina = {};
 
@@ -22,5 +21,11 @@ app.controller('ControladorDisciplinas', ['$scope', 'Disciplina', function($scop
   $scope.limpar = function(){
     $scope.disciplina = {};
   }
+}]);
+
+
+app.controller('ControladorProfessor', ['$scope', 'Professor', function($scope, Professor){
+
+  
 
 }]);
