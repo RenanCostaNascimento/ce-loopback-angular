@@ -1,0 +1,28 @@
+<ul class="collection with-header">
+  <li class="collection-header"><h4>Disciplinas Cadastradas</h4></li>
+  <li class="collection-item" ng-repeat="disciplina in disciplinas">
+    <div>{{disciplina.nome}}, {{disciplina.vagas}} vagas - {{disciplina.periodo}}° período
+      <a href="" ng-click="carregarEdicao(disciplina)" class="secondary-content"><i class="material-icons">mode_edit</i></a>
+    </div>
+  </li>
+</ul>
+
+<form class="col s12">
+  <div class="row">
+    <div class="input-field col s6">
+      <input id="nome" type="text" ng-model="disciplina.nome" placeholder="Nome da Disciplina">
+      <label class="active" for="nome">Nome</label>
+    </div>
+    <div class="input-field col s3">
+      <input id="vagas" type="number" ng-model="disciplina.vagas" placeholder="Quantidade de vagas disponíveis">
+      <label class="active" for="vagas">Vagas</label>
+    </div>
+    <div class="input-field col s3">
+      <input id="periodo" type="number" ng-model="disciplina.periodo" placeholder="Período em que a disciplina será ofertada">
+      <label class="active" for="periodo">Período</label>
+    </div>
+  </div>
+  <a ng-click="salvarDisciplina()" class="waves-effect waves-light btn orange">Criar Nova</a>
+  <a ng-click="editarDisciplina()" class="waves-effect waves-light btn orange">Salvar Alterações</a>
+  <a ng-click="limpar()" class="waves-effect waves-light btn orange">Limpar</a>
+</form>
